@@ -2,7 +2,12 @@ version: 2
 
 sources:
   - name: stripe
+    description: Data coming from Stripe
     database: dbt-tutorial
     schema: stripe
     tables:
       - name: payment
+        description: Payments made via Stripe
+        columns:
+          - name: payment_method
+            description: '{{ doc("payment_method") }}'
